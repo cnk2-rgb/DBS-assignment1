@@ -1,0 +1,340 @@
+/* ================================================
+   Version 20 — Terminal (White & Blue)
+   ================================================ */
+
+/* ---- Reset ---- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---- Base ---- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f0f2f5;
+  color: #1a6bff;
+  font-family: 'Fira Code', monospace;
+  font-size: 15px;
+  line-height: 1.7;
+  min-height: 100vh;
+  animation: crtFlicker 4s infinite;
+}
+
+/* ---- CRT Scanlines Overlay ---- */
+.crt-scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.04) 2px,
+    rgba(0, 0, 0, 0.04) 4px
+  );
+}
+
+/* ---- CRT Vignette / Screen Curve ---- */
+.crt-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 60%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+/* ---- CRT Flicker ---- */
+@keyframes crtFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.98; }
+  52% { opacity: 1; }
+  75% { opacity: 0.99; }
+  77% { opacity: 1; }
+}
+
+/* ---- Blinking Cursor ---- */
+.blink {
+  animation: cursorBlink 1s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* ---- Cursor Flash (click interaction) ---- */
+@keyframes cursorFlash {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.8); }
+}
+
+/* Override all greens to blue/white scheme */
+
+/* ---- Navigation ---- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 2rem;
+  background: rgba(240, 242, 245, 0.95);
+  border-bottom: 1px solid #1a6bff;
+  backdrop-filter: blur(8px);
+}
+
+.nav__logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a6bff;
+  white-space: nowrap;
+}
+
+.nav__links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav__links a {
+  color: #5a5a6a;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+.nav__links a:hover,
+.nav__links a:focus {
+  color: #1a6bff;
+  text-shadow: 0 0 6px #1a6bff;
+}
+
+/* ---- Hero ---- */
+.hero {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 8rem 1.5rem 4rem;
+  text-align: left;
+}
+
+.hero__prompt {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a6bff;
+  margin-bottom: 1rem;
+}
+
+.hero__tagline {
+  color: #5a5a6a;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero__contact {
+  color: #5a5a6a;
+  font-size: 0.9rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero__scroll {
+  font-size: 0.95rem;
+  color: #1a6bff;
+  text-align: center;
+}
+
+/* ---- Sections ---- */
+.section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+}
+
+.section__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a6bff;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 0.1em;
+}
+
+/* ---- Cards ---- */
+.card {
+  border: 1px solid #b0c0d0;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  border-color: #1a6bff;
+  box-shadow: 0 0 12px rgba(26, 107, 255, 0.15);
+}
+
+.card__bar {
+  background: rgba(26, 107, 255, 0.06);
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+  color: #5a5a6a;
+  border-bottom: 1px dashed #b0c0d0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card__body {
+  padding: 1rem 1.2rem;
+}
+
+.card__title {
+  color: #1a6bff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.card__meta {
+  color: #5a5a6a;
+  font-size: 0.82rem;
+  margin-bottom: 0.6rem;
+}
+
+.card__desc {
+  color: #5a5a6a;
+  font-size: 0.88rem;
+  margin-bottom: 0.4rem;
+}
+
+.card__award {
+  color: #1a6bff;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+.card__sub {
+  color: #1a6bff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.card__bullets {
+  list-style: none;
+  padding: 0;
+}
+
+.card__bullets li {
+  color: #5a5a6a;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  padding-left: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+/* ---- Skills Tags ---- */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  border: 1px solid #b0c0d0;
+  color: #1a6bff;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.8rem;
+  transition: border-color 0.2s, text-shadow 0.2s;
+}
+
+.skill-tag:hover {
+  border-color: #1a6bff;
+  text-shadow: 0 0 6px #1a6bff;
+}
+
+/* ---- Footer ---- */
+.footer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+  color: #5a5a6a;
+  font-size: 0.85rem;
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
+
+  .blink {
+    animation: none;
+    opacity: 1;
+  }
+
+  .crt-scanlines {
+    display: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .card {
+    transition: none;
+  }
+
+  .nav__links a {
+    transition: none;
+  }
+
+  .skill-tag {
+    transition: none;
+  }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav__links {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav__links a {
+    font-size: 0.75rem;
+  }
+
+  .hero {
+    padding-top: 7rem;
+  }
+
+  .hero__prompt {
+    font-size: 1.4rem;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}

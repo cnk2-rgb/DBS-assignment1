@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SECRET // Clarice's Chicago Food Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/version-21.css" />
+  <style>
+    .secret-banner {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(26, 107, 255, 0.06);
+      border-bottom: 1px dashed #b0c0d0;
+      color: #1a6bff;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      margin-top: 3.5rem;
+    }
+    .food-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    .food-section__title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1a6bff;
+      text-align: center;
+      margin-bottom: 2rem;
+      letter-spacing: 0.1em;
+    }
+    .food-card {
+      border: 1px solid #b0c0d0;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .food-card:hover {
+      border-color: #1a6bff;
+      box-shadow: 0 0 12px rgba(26, 107, 255, 0.15);
+    }
+    .food-card__bar {
+      background: rgba(26, 107, 255, 0.06);
+      padding: 0.3rem 0.8rem;
+      font-size: 0.8rem;
+      color: #5a5a6a;
+      border-bottom: 1px dashed #b0c0d0;
+    }
+    .food-card__body {
+      padding: 1rem 1.2rem;
+    }
+    .food-card__name {
+      color: #1a6bff;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    .food-card__type {
+      color: #5a5a6a;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+    .food-card__desc {
+      color: #5a5a6a;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .food-card__rating {
+      color: #1a6bff;
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      padding: 2rem;
+      color: #1a6bff;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: text-shadow 0.2s;
+    }
+    .back-link:hover {
+      text-shadow: 0 0 6px #1a6bff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- CRT Overlays -->
+<div class="crt-scanlines" aria-hidden="true"></div>
+<div class="crt-vignette" aria-hidden="true"></div>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav__logo">&gt; C.K._<span class="blink">&#x2588;</span></div>
+  <ul class="nav__links">
+    <li><a href="version-21.html">[0] BACK</a></li>
+    <li><a href="#recipes">[1] RECIPES</a></li>
+    <li><a href="#spots">[2] SPOTS</a></li>
+  </ul>
+</nav>
+
+<div class="secret-banner">
+  &#9733; SECRET PAGE UNLOCKED &#9733; // you found the easter egg!
+</div>
+
+<!-- ====== Recipes ====== -->
+<section class="food-section" id="recipes">
+  <h2 class="food-section__title">=== FAVORITE RECIPES ===</h2>
+
+  <div class="food-card">
+    <div class="food-card__bar">&#9484;&#9472; recipe-001.txt &#9472;&#9488;</div>
+    <div class="food-card__body">
+      <p class="food-card__name">&gt; Kimchi Jjigae (Kimchi Stew)</p>
+      <p class="food-card__type">  // Korean comfort food</p>
+      <p class="food-card__desc">  [PLACEHOLDER] Recipe coming soon — a warm, spicy stew with aged kimchi, tofu, and pork belly. Perfect for Chicago winters.</p>
+      <p class="food-card__rating">  ** difficulty: easy | time: 40min **</p>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <div class="food-card__bar">&#9484;&#9472; recipe-002.txt &#9472;&#9488;</div>
+    <div class="food-card__body">
+      <p class="food-card__name">&gt; Garlic Butter Pasta</p>
+      <p class="food-card__type">  // Late-night study fuel</p>
+      <p class="food-card__desc">  [PLACEHOLDER] Recipe coming soon — simple aglio e olio with a twist. The go-to midnight meal after a long coding session.</p>
+      <p class="food-card__rating">  ** difficulty: easy | time: 20min **</p>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <div class="food-card__bar">&#9484;&#9472; recipe-003.txt &#9472;&#9488;</div>
+    <div class="food-card__body">
+      <p class="food-card__name">&gt; Matcha Latte (Iced)</p>
+      <p class="food-card__type">  // Daily ritual</p>
+      <p class="food-card__desc">  [PLACEHOLDER] Recipe coming soon — ceremonial grade matcha whisked with oat milk over ice. Better than any coffee shop.</p>
+      <p class="food-card__rating">  ** difficulty: easy | time: 5min **</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Chicago Spots ====== -->
+<section class="food-section" id="spots">
+  <h2 class="food-section__title">=== CHICAGO FOOD SPOTS ===</h2>
+
+  <div class="food-card">
+    <div class="food-card__bar">&#9484;&#9472; spot-001.txt &#9472;&#9488;</div>
+    <div class="food-card__body">
+      <p class="food-card__name">&gt; [PLACEHOLDER] Favorite Spot #1</p>
+      <p class="food-card__type">  // Hyde Park area</p>
+      <p class="food-card__desc">  Coming soon — a go-to spot near campus.</p>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <div class="food-card__bar">&#9484;&#9472; spot-002.txt &#9472;&#9488;</div>
+    <div class="food-card__body">
+      <p class="food-card__name">&gt; [PLACEHOLDER] Favorite Spot #2</p>
+      <p class="food-card__type">  // Downtown Chicago</p>
+      <p class="food-card__desc">  Coming soon — worth the trip from campus.</p>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <div class="food-card__bar">&#9484;&#9472; spot-003.txt &#9472;&#9488;</div>
+    <div class="food-card__body">
+      <p class="food-card__name">&gt; [PLACEHOLDER] Favorite Spot #3</p>
+      <p class="food-card__type">  // Chinatown</p>
+      <p class="food-card__desc">  Coming soon — the best dim sum in the city.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <a href="version-21.html" class="back-link">[&lt; BACK TO PORTFOLIO]</a>
+  <p>// EOF &mdash; &copy; 2026 Clarice N. Kim // SECRET MENU</p>
+</footer>
+
+</body>
+</html>
