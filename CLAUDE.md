@@ -16,7 +16,7 @@ website together. Let me know if you have any questions
 - Three sections: Experiences, Projects, Education
 
 ## Content Source
-- Resume PDF in repo (`Clarice-Kim-Resume.Updated.1.28.26 (1).pdf`)
+- Resume PDF in repo (`Clarice-Kim-Resume.Updated.1.28.26 (1).pdf`) [NOW DELETED]
 
 ## File Structure
 - `index.html` — comparison page with iframe previews of all three versions
