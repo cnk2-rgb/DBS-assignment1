@@ -13,20 +13,15 @@ website together. Let me know if you have any questions
 - Deployed on Vercel via GitHub
 
 ## Design
-- Dark galaxy theme, clean aesthetic
-- Accent colors: purples, blues, white
 - Three sections: Experiences, Projects, Education
 
 ## Content Source
 - Resume PDF in repo (`Clarice-Kim-Resume.Updated.1.28.26 (1).pdf`)
 
 ## File Structure
-- `gallery.html` — comparison page with iframe previews of all three versions
+- `index.html` — comparison page with iframe previews of all three versions
 - `versions/` — full-page HTML for each design variant (version-a, b, c)
 - `styles/` — CSS files for gallery and each version
 
 ## Current Status
-Gallery phase — iterating on 3 design versions:
-- **Version A: Constellation** — minimal centered layout, twinkling stars, glow cards, sticky nav
-- **Version B: Nebula** — split hero, timeline experiences, frosted glass, grid projects
-- **Version C: Deep Space** — animated gradient hero, floating glass nav, accordions, hover zoom 
+Gallery phase — iterating on design versions

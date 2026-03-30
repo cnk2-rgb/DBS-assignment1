@@ -1,0 +1,515 @@
+/* ============================================================
+   Version 10 — Pill Tabs + Bento Grid
+   ============================================================ */
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0a1a;
+  color: #e2e8f0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ---------- Star Field ---------- */
+.star-field {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+  animation: twinkle var(--dur, 3s) ease-in-out var(--delay, 0s) infinite alternate;
+}
+
+@keyframes twinkle {
+  0%   { opacity: 0.15; transform: scale(1); }
+  100% { opacity: 1;    transform: scale(1.4); }
+}
+
+/* ---------- Click Sparkle ---------- */
+.click-sparkle {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #a78bfa 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 9999;
+  animation: sparkle-pop 0.5s ease-out forwards;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes sparkle-pop {
+  0%   { opacity: 1;   transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 6px 3px rgba(167, 139, 250, 0.6); }
+  100% { opacity: 0;   transform: translate(-50%, -50%) scale(3); box-shadow: 0 0 0 0 transparent; }
+}
+
+/* ---------- Pill Navigation ---------- */
+.pill-nav {
+  position: sticky;
+  top: 16px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  margin: 16px auto 0;
+  padding: 8px 12px;
+  background: rgba(15, 15, 35, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: 999px;
+}
+
+.pill-nav__logo {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #a78bfa;
+  padding: 6px 16px;
+  white-space: nowrap;
+}
+
+.pill-nav__links {
+  display: flex;
+  gap: 4px;
+}
+
+.pill-nav__link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 999px;
+  color: #94a3b8;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.pill-nav__link:hover,
+.pill-nav__link:focus {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+}
+
+.pill-nav__link:active {
+  background: #7c3aed;
+  color: #fff;
+}
+
+/* ---------- Hero Bar ---------- */
+.hero-bar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 32px auto 0;
+  padding: 28px 36px;
+  background: rgba(15, 15, 35, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(167, 139, 250, 0.15);
+  border-radius: 20px;
+}
+
+.hero-bar__name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+}
+
+.hero-bar__right {
+  text-align: right;
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-bar__tagline {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.hero-bar__contact {
+  font-size: 0.82rem;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.hero-bar__contact a {
+  color: #a78bfa;
+  transition: color 0.2s;
+}
+
+.hero-bar__contact a:hover {
+  color: #c4b5fd;
+}
+
+.hero-bar__sep {
+  color: #475569;
+}
+
+/* ---------- Sections ---------- */
+.section {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 56px auto 0;
+  padding: 0 24px;
+}
+
+.section__title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #a78bfa;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ---------- Bento Grid — Experiences (2-col masonry-like) ---------- */
+.bento-grid--exp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Place the tall cards to span 2 rows visually via auto-flow */
+.bento-grid--exp .bento-card--tall {
+  grid-row: span 2;
+}
+
+/* ---------- Bento Grid — Projects (3-col) ---------- */
+.bento-grid--proj {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ---------- Bento Grid — Education (single wide card) ---------- */
+.bento-grid--edu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* ---------- Bento Card ---------- */
+.bento-card {
+  background: rgba(15, 15, 40, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(167, 139, 250, 0.12);
+  border-radius: 20px;
+  padding: 24px 28px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(167, 139, 250, 0.35);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.15);
+}
+
+.bento-card__company {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 4px;
+}
+
+.bento-card__role {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #a78bfa;
+  margin-bottom: 6px;
+}
+
+.bento-card__meta {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-bottom: 14px;
+}
+
+.bento-card__bullets {
+  list-style: none;
+  padding: 0;
+}
+
+.bento-card__bullets li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+  line-height: 1.55;
+}
+
+.bento-card__bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+}
+
+/* Project cards */
+.bento-card--project {
+  display: flex;
+  flex-direction: column;
+}
+
+.bento-card__desc {
+  font-size: 0.84rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-top: 8px;
+  flex: 1;
+}
+
+.bento-card__award {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  border-radius: 999px;
+  width: fit-content;
+}
+
+/* Education wide card */
+.bento-card--wide {
+  padding: 32px 36px;
+}
+
+.edu__school {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 4px;
+}
+
+.edu__degree {
+  font-size: 0.95rem;
+  color: #a78bfa;
+  margin-bottom: 4px;
+}
+
+.edu__gpa {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+.edu__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.edu__sub {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #60a5fa;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+  margin-top: 16px;
+}
+
+.edu__sub:first-child {
+  margin-top: 0;
+}
+
+.edu__list {
+  list-style: none;
+  padding: 0;
+}
+
+.edu__list li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.edu__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #a78bfa;
+}
+
+/* Skills tags */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.skill-tag {
+  padding: 5px 14px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #c4b5fd;
+  background: rgba(167, 139, 250, 0.1);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: 999px;
+  transition: all 0.25s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(167, 139, 250, 0.25);
+  border-color: rgba(167, 139, 250, 0.45);
+  color: #e2e8f0;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 48px 0 32px;
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+/* ---------- Responsive (mobile) ---------- */
+@media (max-width: 768px) {
+  /* Pill nav scrolls horizontally */
+  .pill-nav {
+    max-width: calc(100% - 16px);
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 6px 8px;
+    margin-top: 8px;
+    top: 8px;
+  }
+
+  .pill-nav__links {
+    flex-shrink: 0;
+  }
+
+  .pill-nav__link {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+
+  .pill-nav__logo {
+    padding: 6px 12px;
+    font-size: 1rem;
+  }
+
+  /* Hero bar stacks vertically */
+  .hero-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 20px 12px 0;
+    padding: 22px 20px;
+  }
+
+  .hero-bar__name {
+    font-size: 1.5rem;
+  }
+
+  .hero-bar__right {
+    text-align: left;
+  }
+
+  .hero-bar__contact {
+    justify-content: flex-start;
+  }
+
+  /* Sections */
+  .section {
+    margin-top: 40px;
+    padding: 0 12px;
+  }
+
+  .section__title {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+  }
+
+  /* All bento grids → single column */
+  .bento-grid--exp,
+  .bento-grid--proj,
+  .bento-grid--edu {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-grid--exp .bento-card--tall {
+    grid-row: span 1;
+  }
+
+  .bento-card {
+    padding: 20px;
+  }
+
+  .bento-card--wide {
+    padding: 24px 20px;
+  }
+
+  /* Education columns stack */
+  .edu__columns {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
