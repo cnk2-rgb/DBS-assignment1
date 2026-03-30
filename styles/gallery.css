@@ -37,6 +37,57 @@ body {
     margin: 0 auto;
 }
 
+/* Jump to Final Button */
+.jump-final-btn {
+    display: inline-block;
+    margin-top: 1.25rem;
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, #7dd3fc, #60a5fa);
+    color: #06060f;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.jump-final-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(125, 211, 252, 0.35);
+}
+
+/* Final Version Card */
+.card-final {
+    grid-column: 1 / -1;
+    position: relative;
+    border: 2px solid rgba(125, 211, 252, 0.5);
+    background: rgba(125, 211, 252, 0.05);
+    box-shadow: 0 0 40px rgba(125, 211, 252, 0.1);
+}
+
+.card-final .card-preview {
+    height: 480px;
+}
+
+.card-final:hover {
+    border-color: rgba(125, 211, 252, 0.8);
+    box-shadow: 0 16px 60px rgba(125, 211, 252, 0.25);
+}
+
+.final-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #7dd3fc, #60a5fa);
+    color: #06060f;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    z-index: 10;
+    letter-spacing: 0.03em;
+}
+
 /* Gallery Grid */
 .gallery-grid {
     display: grid;
