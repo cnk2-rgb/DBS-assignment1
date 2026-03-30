@@ -1,0 +1,450 @@
+/* ============================================
+   Version C — "Deep Space"
+   Dark galaxy themed portfolio for Clarice Kim
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: #050510;
+  color: #e2e8f0;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ---------- Animated Gradient Hero ---------- */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+  background: linear-gradient(
+    270deg,
+    #050510,
+    #1a0533,
+    #0a1a3a,
+    #050510,
+    #120825,
+    #081430
+  );
+  background-size: 600% 600%;
+  animation: heroShift 18s ease infinite;
+}
+
+@keyframes heroShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Subtle star-field overlay */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,.45) 50%, transparent 100%),
+    radial-gradient(1px 1px at 30% 65%, rgba(255,255,255,.3) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 55% 15%, rgba(255,255,255,.5) 50%, transparent 100%),
+    radial-gradient(1px 1px at 70% 80%, rgba(255,255,255,.35) 50%, transparent 100%),
+    radial-gradient(1px 1px at 85% 40%, rgba(255,255,255,.25) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 20% 90%, rgba(255,255,255,.4) 50%, transparent 100%),
+    radial-gradient(1px 1px at 45% 45%, rgba(255,255,255,.3) 50%, transparent 100%),
+    radial-gradient(1px 1px at 90% 10%, rgba(255,255,255,.35) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 55%, rgba(255,255,255,.2) 50%, transparent 100%),
+    radial-gradient(1px 1px at 5% 50%, rgba(255,255,255,.4) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__name {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #a855f7, #3b82f6, #22d3ee, #a855f7);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientText 6s ease infinite;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes gradientText {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero__subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  color: #94a3b8;
+  margin-bottom: 0.75rem;
+}
+
+.hero__contact {
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+.hero__contact a {
+  color: #22d3ee;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.hero__contact a:hover {
+  color: #a855f7;
+}
+
+/* ---------- Floating Glass Nav ---------- */
+.nav {
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.nav a {
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.3s, background 0.3s;
+}
+
+.nav a:hover {
+  color: #fff;
+  background: rgba(168, 85, 247, 0.15);
+}
+
+/* ---------- Sections (shared) ---------- */
+.section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.section__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #a855f7, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---------- Accordion Experiences ---------- */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.experience-item {
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.3s, background 0.3s;
+  overflow: hidden;
+}
+
+.experience-item:hover {
+  border-color: rgba(168, 85, 247, 0.35);
+}
+
+.experience-item[open] {
+  background: rgba(168, 85, 247, 0.04);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.experience-item summary {
+  cursor: pointer;
+  padding: 1.5rem 2rem;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  user-select: none;
+  position: relative;
+}
+
+.experience-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Chevron */
+.experience-item summary::after {
+  content: '';
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #a855f7;
+  border-bottom: 2px solid #a855f7;
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.3s;
+}
+
+.experience-item[open] summary::after {
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.experience-item summary .role {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  flex: 1 1 100%;
+}
+
+.experience-item summary .company {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #a855f7;
+}
+
+.experience-item summary .meta {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.experience-body {
+  padding: 0 2rem 1.75rem;
+}
+
+.experience-body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.experience-body li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.experience-body li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3b82f6;
+}
+
+/* ---------- Project Cards ---------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  transition: transform 0.4s cubic-bezier(.25,.8,.25,1), border-color 0.3s, box-shadow 0.4s;
+}
+
+.project-card:hover {
+  transform: scale(1.045);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.1);
+}
+
+.project-card__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 0.75rem;
+}
+
+.project-card__desc {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.65;
+}
+
+.project-card__badge {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(168, 85, 247, 0.15);
+  color: #a855f7;
+  letter-spacing: 0.03em;
+}
+
+/* ---------- Education ---------- */
+.education-block {
+  border: 1px solid rgba(34, 211, 238, 0.12);
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.education-block h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 0.25rem;
+}
+
+.education-block .degree {
+  font-size: 1.05rem;
+  color: #22d3ee;
+  margin-bottom: 0.25rem;
+}
+
+.education-block .edu-meta {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.edu-section {
+  margin-bottom: 1.25rem;
+}
+
+.edu-section:last-child {
+  margin-bottom: 0;
+}
+
+.edu-section h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #a855f7;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.edu-section p,
+.edu-section ul {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.edu-section ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.edu-section ul li {
+  display: inline-block;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  transition: background 0.3s, color 0.3s;
+}
+
+.skill-tag:hover {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  font-size: 0.85rem;
+  color: #475569;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ---------- Divider Glow ---------- */
+.section + .section {
+  border-top: 1px solid rgba(168, 85, 247, 0.06);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .nav {
+    top: 0.75rem;
+    padding: 0.4rem 0.5rem;
+    gap: 0.1rem;
+  }
+
+  .nav a {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .section {
+    padding: 4rem 1.25rem;
+  }
+
+  .experience-item summary {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .experience-body {
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .education-block {
+    padding: 1.75rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

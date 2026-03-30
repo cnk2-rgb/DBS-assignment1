@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clarice N. Kim | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/version-b.css" />
+</head>
+<body>
+
+  <!-- ==================== NAV ==================== -->
+  <nav class="navbar" id="navbar">
+    <a href="#hero" class="nav-logo">CK</a>
+    <ul class="nav-links">
+      <li><a href="#experiences">Experiences</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-left">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Clarice N. Kim</h1>
+        <p class="hero-tagline">BS/MS Computer Science student at the <span class="highlight">University of Chicago</span></p>
+        <p class="hero-description">
+          Building software at the intersection of systems, ML, and user-facing products.
+        </p>
+        <div class="hero-contact">
+          <a href="mailto:claricek@uchicago.edu" class="contact-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            claricek@uchicago.edu
+          </a>
+          <span class="contact-pill location-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Chicago, IL
+          </span>
+        </div>
+        <div class="hero-cta">
+          <a href="#experiences" class="btn btn-primary">View My Work</a>
+          <a href="#education" class="btn btn-ghost">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="nebula-orb">
+          <div class="orb-ring orb-ring-1"></div>
+          <div class="orb-ring orb-ring-2"></div>
+          <div class="orb-ring orb-ring-3"></div>
+          <div class="orb-core"></div>
+          <div class="orb-particle orb-particle-1"></div>
+          <div class="orb-particle orb-particle-2"></div>
+          <div class="orb-particle orb-particle-3"></div>
+          <div class="orb-particle orb-particle-4"></div>
+          <div class="orb-particle orb-particle-5"></div>
+          <div class="orb-particle orb-particle-6"></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCES ==================== -->
+  <section class="section experiences" id="experiences">
+    <h2 class="section-title">Experiences</h2>
+    <p class="section-subtitle">Where I've contributed and grown</p>
+
+    <div class="timeline">
+
+      <!-- 1 - United Airlines -->
+      <div class="timeline-item timeline-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass-card">
+          <div class="timeline-header">
+            <h3>United Airlines</h3>
+            <span class="timeline-date">June 2025 &ndash; Sept 2025</span>
+          </div>
+          <p class="timeline-role">Flight Profitability Software Engineering Intern</p>
+          <p class="timeline-location">Chicago, IL</p>
+          <ul class="timeline-details">
+            <li>Refactored 10+ Flight Profitability System APIs using .NET Core, cutting DB migration time by ~50%</li>
+            <li>Developed AWS S3-integrated file name drop-down using ASP.NET, eliminating 100% of invalid file name errors</li>
+            <li>Implemented ML prototypes for detecting outliers and forecasting fuel expense data; projected to impact pricing of 1.5M+ flights yearly</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 2 - A*STAR -->
+      <div class="timeline-item timeline-right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass-card">
+          <div class="timeline-header">
+            <h3>A*STAR Institute of High Performance Computing</h3>
+            <span class="timeline-date">June 2024 &ndash; Aug 2024</span>
+          </div>
+          <p class="timeline-role">Neural Networks Research Intern</p>
+          <p class="timeline-location">Singapore</p>
+          <ul class="timeline-details">
+            <li>Recipient of 2024 Singapore International Pre-Graduate Award, researched Physics-Informed Neural Networks</li>
+            <li>Implemented 15+ models in JAX for pseudoinverse meta-learning framework for pharmacokinetics</li>
+            <li>Re-engineered parameter inference from TensorFlow to JAX</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3 - Zelia AI -->
+      <div class="timeline-item timeline-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass-card">
+          <div class="timeline-header">
+            <h3>Zelia AI</h3>
+            <span class="timeline-date">March 2024 &ndash; May 2024</span>
+          </div>
+          <p class="timeline-role">Software Engineering Intern</p>
+          <p class="timeline-location">Chicago, IL</p>
+          <ul class="timeline-details">
+            <li>Constructed REST APIs using Python managing DynamoDB for 20+ clothing brands</li>
+            <li>Tested APIs via EC2 instances and Postman</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4 - UChicago TechTeam -->
+      <div class="timeline-item timeline-right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass-card">
+          <div class="timeline-header">
+            <h3>UChicago TechTeam</h3>
+            <span class="timeline-date">Oct 2022 &ndash; Dec 2023</span>
+          </div>
+          <p class="timeline-role">Software Developer</p>
+          <p class="timeline-location">Chicago, IL</p>
+          <ul class="timeline-details">
+            <li>Programmed PDF automation tool with Python and React for 177 congresspeople advocacy documents</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 5 - Code Your Dreams -->
+      <div class="timeline-item timeline-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass-card">
+          <div class="timeline-header">
+            <h3>Code Your Dreams</h3>
+            <span class="timeline-date">June 2023 &ndash; Aug 2023</span>
+          </div>
+          <p class="timeline-role">CS Education Intern</p>
+          <p class="timeline-location">Chicago, IL</p>
+          <ul class="timeline-details">
+            <li>Audited and wrote 80+ lessons across Web Dev, App Dev, and Data Science</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS ==================== -->
+  <section class="section projects" id="projects">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-subtitle">Things I've built</p>
+
+    <div class="project-grid">
+
+      <div class="project-card glass-card">
+        <div class="project-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3>JipBap</h3>
+        <p class="project-tech">React Native &middot; Firebase</p>
+        <p class="project-desc">
+          A marketplace mobile app for home-cooked meals, connecting local cooks with their communities.
+        </p>
+        <div class="project-badge">Most Impressive Project &mdash; UChicago 2023</div>
+      </div>
+
+      <div class="project-card glass-card">
+        <div class="project-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>Genomic Annotation System</h3>
+        <p class="project-tech">AWS &middot; Python &middot; HTML/CSS</p>
+        <p class="project-desc">
+          A distributed web service for genomic annotation with fault tolerance, leveraging AWS services for scalable processing.
+        </p>
+      </div>
+
+      <div class="project-card glass-card">
+        <div class="project-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>CrustyDB</h3>
+        <p class="project-tech">Rust</p>
+        <p class="project-desc">
+          A heap storage manager and query optimizer built in Rust. Achieved a 97% grade and exceeded performance benchmarks.
+        </p>
+        <div class="project-badge">97% Grade</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== EDUCATION ==================== -->
+  <section class="section education" id="education">
+    <h2 class="section-title">Education</h2>
+    <p class="section-subtitle">Academic background and skills</p>
+
+    <div class="education-grid">
+
+      <div class="edu-card glass-card">
+        <div class="edu-header">
+          <div>
+            <h3>University of Chicago</h3>
+            <p class="edu-degree">BS/MS in Computer Science, Minor in Music</p>
+          </div>
+          <div class="edu-meta">
+            <span class="edu-gpa">3.92 / 4.0</span>
+            <span class="edu-date">Expected June 2026</span>
+          </div>
+        </div>
+        <div class="edu-awards">
+          <span class="award-tag">Robert Maynard Hutchins Scholar (Top 10%)</span>
+          <span class="award-tag">Dean's List 2022&ndash;2024</span>
+        </div>
+      </div>
+
+      <div class="edu-card glass-card">
+        <h3>Activities</h3>
+        <ul class="activities-list">
+          <li>ACM-W President</li>
+          <li>Kappa Theta Pi &mdash; Director of Professional Development</li>
+          <li>University Symphony Orchestra</li>
+          <li>South Side Free Music Program Violin Instructor</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="skills-container glass-card">
+      <h3>Technical Skills</h3>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Languages</h4>
+          <div class="skill-tags">
+            <span>Python</span>
+            <span>C</span>
+            <span>Rust</span>
+            <span>JavaScript</span>
+            <span>C#</span>
+            <span>Swift</span>
+            <span>SQL</span>
+            <span>HTML/CSS</span>
+            <span>Assembly</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Frameworks &amp; Tools</h4>
+          <div class="skill-tags">
+            <span>React</span>
+            <span>React Native</span>
+            <span>Firebase</span>
+            <span>JAX</span>
+            <span>AWS</span>
+            <span>Docker</span>
+            <span>Git</span>
+            <span>PostgreSQL</span>
+            <span>DynamoDB</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <p>&copy; 2026 Clarice N. Kim</p>
+  </footer>
+
+</body>
+</html>
