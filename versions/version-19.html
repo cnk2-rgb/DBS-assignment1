@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clarice N. Kim &mdash; Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/version-19.css" />
+</head>
+<body>
+
+<!-- ====== Nav ====== -->
+<nav class="nav" id="nav">
+  <div class="nav__logo">C.K.</div>
+  <ul class="nav__links">
+    <li><a href="#experiences">EXPERIENCES</a></li>
+    <li><a href="#projects">PROJECTS</a></li>
+    <li><a href="#education">EDUCATION</a></li>
+  </ul>
+</nav>
+
+<!-- ====== Hero ====== -->
+<header class="hero" id="hero">
+  <h1 class="hero__name" data-text="Clarice N. Kim">Clarice N. Kim</h1>
+  <p class="hero__tagline">BS/MS Computer Science student at the University of Chicago, building software that scales from neural networks to distributed systems.</p>
+  <div class="hero__contact">
+    <a href="mailto:claricek@uchicago.edu">claricek@uchicago.edu</a>
+    <span class="hero__sep">|</span>
+    <span>Chicago, IL</span>
+  </div>
+</header>
+
+<!-- ====== Experiences ====== -->
+<section class="section" id="experiences">
+  <h2 class="section__title">Experiences</h2>
+
+  <article class="card card--experience">
+    <div class="card__header">
+      <div>
+        <div class="card__title">United Airlines</div>
+        <div class="card__subtitle">Flight Profitability Software Engineering Intern</div>
+      </div>
+      <div class="card__meta">June 2025 &ndash; Sept 2025 &middot; Chicago, IL</div>
+    </div>
+    <ul class="card__bullets">
+      <li>Refactored 10+ Flight Profitability System APIs using .NET Core, cutting DB migration time by ~50%</li>
+      <li>Developed AWS S3-integrated file name drop-down using ASP.NET, eliminating 100% of invalid file name errors</li>
+      <li>Implemented ML prototypes for detecting outliers and forecasting fuel expense data; projected to impact pricing of 1.5M+ flights yearly</li>
+    </ul>
+  </article>
+
+  <article class="card card--experience">
+    <div class="card__header">
+      <div>
+        <div class="card__title">A*STAR Institute of High Performance Computing</div>
+        <div class="card__subtitle">Neural Networks Research Intern</div>
+      </div>
+      <div class="card__meta">June 2024 &ndash; Aug 2024 &middot; Singapore</div>
+    </div>
+    <ul class="card__bullets">
+      <li>Recipient of 2024 Singapore International Pre-Graduate Award, researched Physics-Informed Neural Networks</li>
+      <li>Implemented 15+ models in JAX for pseudoinverse meta-learning framework for pharmacokinetics</li>
+      <li>Re-engineered parameter inference from TensorFlow to JAX</li>
+    </ul>
+  </article>
+
+  <article class="card card--experience">
+    <div class="card__header">
+      <div>
+        <div class="card__title">Zelia AI</div>
+        <div class="card__subtitle">Software Engineering Intern</div>
+      </div>
+      <div class="card__meta">March 2024 &ndash; May 2024 &middot; Chicago, IL</div>
+    </div>
+    <ul class="card__bullets">
+      <li>Constructed REST APIs using Python managing DynamoDB for 20+ clothing brands</li>
+      <li>Tested APIs via EC2 instances and Postman</li>
+    </ul>
+  </article>
+
+  <article class="card card--experience">
+    <div class="card__header">
+      <div>
+        <div class="card__title">UChicago TechTeam</div>
+        <div class="card__subtitle">Software Developer</div>
+      </div>
+      <div class="card__meta">Oct 2022 &ndash; Dec 2023 &middot; Chicago, IL</div>
+    </div>
+    <ul class="card__bullets">
+      <li>Programmed PDF automation tool with Python and React for 177 congresspeople advocacy documents</li>
+    </ul>
+  </article>
+
+  <article class="card card--experience">
+    <div class="card__header">
+      <div>
+        <div class="card__title">Code Your Dreams</div>
+        <div class="card__subtitle">CS Education Intern</div>
+      </div>
+      <div class="card__meta">June 2023 &ndash; Aug 2023 &middot; Chicago, IL</div>
+    </div>
+    <ul class="card__bullets">
+      <li>Audited and wrote 80+ lessons across Web Dev, App Dev, and Data Science</li>
+    </ul>
+  </article>
+</section>
+
+<!-- ====== Projects ====== -->
+<section class="section" id="projects">
+  <h2 class="section__title">Projects</h2>
+
+  <article class="card card--project">
+    <div class="card__header">
+      <div class="card__title">JipBap</div>
+    </div>
+    <p class="card__desc">Marketplace mobile app built with React Native and Firebase for home-cooked meals, connecting local cooks with their community.</p>
+    <span class="card__award">Most Impressive Project Award &mdash; UChicago 2023</span>
+  </article>
+
+  <article class="card card--project">
+    <div class="card__header">
+      <div class="card__title">Genomic Annotation System</div>
+    </div>
+    <p class="card__desc">Distributed web service using AWS, Python, and HTML/CSS with fault tolerance for processing genomic annotation jobs at scale.</p>
+  </article>
+
+  <article class="card card--project">
+    <div class="card__header">
+      <div class="card__title">CrustyDB</div>
+    </div>
+    <p class="card__desc">Heap storage manager and query optimizer written in Rust. Achieved a 97% grade and exceeded performance benchmarks.</p>
+  </article>
+</section>
+
+<!-- ====== Education ====== -->
+<section class="section" id="education">
+  <h2 class="section__title">Education</h2>
+
+  <article class="card card--education">
+    <div class="edu__school">University of Chicago</div>
+    <div class="edu__degree">BS/MS in Computer Science &middot; Minor in Music</div>
+    <div class="edu__gpa">GPA: 3.92 / 4.0 &middot; Expected June 2026</div>
+
+    <div class="edu__sub">Awards</div>
+    <ul class="edu__list">
+      <li>Robert Maynard Hutchins Scholar (Top 10%)</li>
+      <li>Dean's List (2022&ndash;2024)</li>
+    </ul>
+
+    <div class="edu__sub">Activities</div>
+    <ul class="edu__list">
+      <li>ACM-W President</li>
+      <li>Kappa Theta Pi &mdash; Director of Professional Development</li>
+      <li>University Symphony Orchestra</li>
+      <li>South Side Free Music Program &mdash; Violin Instructor</li>
+    </ul>
+
+    <div class="edu__sub">Skills</div>
+    <div class="skills">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">C</span>
+      <span class="skill-tag">Rust</span>
+      <span class="skill-tag">JavaScript</span>
+      <span class="skill-tag">C#</span>
+      <span class="skill-tag">Swift</span>
+      <span class="skill-tag">SQL</span>
+      <span class="skill-tag">HTML/CSS</span>
+      <span class="skill-tag">Assembly</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">React Native</span>
+      <span class="skill-tag">Firebase</span>
+      <span class="skill-tag">JAX</span>
+      <span class="skill-tag">AWS</span>
+      <span class="skill-tag">Docker</span>
+      <span class="skill-tag">Git</span>
+      <span class="skill-tag">PostgreSQL</span>
+      <span class="skill-tag">DynamoDB</span>
+    </div>
+  </article>
+</section>
+
+<!-- ====== Footer ====== -->
+<footer class="footer">
+  <p>&copy; 2026 Clarice N. Kim</p>
+</footer>
+
+<script>
+(function () {
+  var audioCtx = null;
+
+  function initAudio() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+  }
+
+  function playZap() {
+    if (!audioCtx) return;
+    var now = audioCtx.currentTime;
+    var duration = 0.08;
+
+    var osc = audioCtx.createOscillator();
+    var gain = audioCtx.createGain();
+
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(1500 + Math.random() * 1000, now);
+    osc.frequency.exponentialRampToValueAtTime(800, now + duration);
+
+    gain.gain.setValueAtTime(0.12, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start(now);
+    osc.stop(now + duration);
+  }
+
+  function spawnGlitch(y) {
+    var line = document.createElement('div');
+    line.className = 'glitch-line';
+    line.style.top = y + 'px';
+    document.body.appendChild(line);
+    line.addEventListener('animationend', function () { this.remove(); });
+  }
+
+  document.addEventListener('click', function (e) {
+    initAudio();
+    playZap();
+    spawnGlitch(e.clientY);
+  });
+})();
+</script>
+
+</body>
+</html>
